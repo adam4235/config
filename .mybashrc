@@ -1,0 +1,61 @@
+#Add my personal settings.
+#I want this file to be shared by adam and root.
+
+# Make it display the user name as the prompt (the current path should be in the titlebar)
+export PS1="\u>"
+export EDITOR="vi"
+export COLORTERM=xterm
+
+# Set the titlebar of graphical terminal
+#if [ "$TERM" == "xterm" ]; then
+	# Konsole suggested:
+	#              "\[\e]0;\H:\w\a\]"
+	export PS1="$PS1\[\e]0;\w\a\]"
+#fi
+
+# User specific aliases and functions
+
+alias gvim="gvim --sync"  #work around display issue when runnig as a guest in a virtual machine
+#   See https://stackoverflow.com/questions/25018843/gvim-redraw-issues-with-virtual-box-and-windows-7-host
+
+#Added by Adam - some aliases
+alias grep="grep -i --color=always"       #ignore case when using grep
+alias ls="ls -Fhl --color=auto"   #default options for ls
+alias kill="/bin/kill"   #Otherwise, bash has a built-in kill command which isn't as good (it forces you to type a number instead of a name)
+alias cd..="cd .."
+alias p="cd -"
+alias u="cd .."
+
+#Make cd remember all directories changed to, so you can go back like in a web browser
+#But doesn't work when I use cd without parameters
+#alias cd..="pushd .. > /dev/null"
+#alias cd="pushd > /dev/null"
+#alias p="popd"
+#alias u="pushd .. > /dev/null"
+
+alias cp="cp -ip"
+alias mv="mv -i"
+alias rm="echo 'use trash-put'"
+alias du='du -h'
+alias df='df -h'
+
+#shell options
+shopt -s histverify   #Make history substitution (with ! and !!) display rather than execute the command. Safer and lets me modify it.
+shopt -s histreedit   #If I make a mistake with history substitution, it should let me fix it
+
+#Programmable command completion - gotta love it.
+#It's described on line 2874 of man bash.
+
+#completions from the bash-completions package
+#if [ -f /etc/bash_completion ] 
+#then
+#	 . /etc/bash_completion
+
+	#/etc/bash_completions doesn't handle mount correctly
+#	complete -r mount
+#fi
+
+#My custom completions
+#COMPLETIONS=~adam/bin
+#complete -C $COMPLETIONS/compbat bat
+
