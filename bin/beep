@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#aplay /usr/share/sounds/purple/alert.wav
+aplay /usr/share/sounds/linuxmint-gdm.wav
+

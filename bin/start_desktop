@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$(ls -A /home/adam/Desktop)" ]
+then
+    echo Desktop empty
+else
+    thunar /home/adam/Desktop
+fi
+

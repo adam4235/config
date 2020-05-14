@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for FILE in *.[jJ][pP][gG]
+do
+	convert "$FILE" -resize 50% "$FILE"
+done
+

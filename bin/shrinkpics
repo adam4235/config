@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SIZE=1000
+
+mkdir converted
+for FILE in *.[jJ][pP][gG]
+do
+	convert $FILE -resize "$SIZEx$SIZE>" converted/$FILE
+done
+

@@ -1,0 +1,60 @@
+#!/bin/bash
+
+log=/tmp/internet_log.txt
+
+#Make this script only happen once
+if [ -f /tmp/internet_log.txt ]
+then
+    exit 0
+fi
+
+#cp $HOME/.thunderbird/profiles.ini.real $HOME/.thunderbird/profiles.ini
+#cp $HOME/.mozilla/firefox/profiles.ini.real $HOME/.mozilla/firefox/profiles.ini
+
+#Wait until the internet is connected
+rm $log &> /dev/null
+file="http://www.google.com"
+localfile=index.html
+cd /tmp
+rm "${localfile}" &> /dev/null
+
+while ! [ -f "${localfile}" ]
+do
+	echo "Waiting for Internet" >> $log
+	sleep 1
+	wget -nc --timeout=20 "${file}"
+done
+
+#Add programs to run on Internet startup here
+
+echo "Internet connected, starting programs..." >> $log
+
+webpages=
+
+RAWDOG_DIR=/home/adam/.rawdog/
+cp $RAWDOG_DIR/output.html $RAWDOG_DIR/output.html.old
+rawdog -uw
+
+if [ "`diff $RAWDOG_DIR/output.html $RAWDOG_DIR/output.html.old`" != "" ]
+then
+    webpages="--new-window $RAWDOG_DIR/output.html "
+fi
+
+dayofweek="`date +%a`"
+
+if [ "${dayofweek}" == "Fri" ]
+then
+    #I think OKCupid puts people higher up the list if they log on regularly, and if they're currently logged in
+    webpages="${webpages} --new-window https://bumble.com/app --new-window https://www.okcupid.com --new-window https://www.pof.com --new-window https://www.gmail.com"
+fi
+
+if [ "${webpages}" != "" ]
+then
+    firefox ${webpages} &
+fi
+
+if [ `date +%d` == "01" ]
+    "Backing up articles"
+    backup_articles
+fi
+

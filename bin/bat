@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#create a new bash script, or modify one
+
+if [ $# -eq 0 ]
+then
+  echo "Enter a script name:"
+  read script
+else
+  script=$1
+fi
+
+script=~/bin/$script
+
+if [ -f $script ]
+then gvim $script
+else
+  echo "#!/bin/bash" >> $script
+  chmod a+x $script
+  gvim $script
+fi

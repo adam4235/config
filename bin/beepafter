@@ -1,0 +1,5 @@
+#!/bin/bash
+
+while ps -A | grep $1; do sleep 1 ; done
+beep
+

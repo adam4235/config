@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if ! [ -e /home/adam/phone/DCIM ]
+then
+    #I used my router to assign this IP address to my phone using its MAC address.
+    #(http://192.168.2.1)
+    #If you use this command the first time, it hangs with -o password_stdin 
+    #(because it's waiting for you to type "yes".)
+    #Currently, it also hangs when the IP address is entered wrong, rather than telling you it's wrong.
+    #echo "fae5" | sshfs root@192.168.2.21:/storage/sdcard0 /home/adam/phone -p 2222 -o password_stdin
+
+    #For LG G3:
+    echo "fae5" | sshfs root@192.168.2.20:/storage/emulated/0 /home/adam/phone -p 2222 -o password_stdin -o uid=1000,gid=1000
+fi
+

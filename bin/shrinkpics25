@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mkdir converted
+for FILE in *.[jJ][pP][gG]
+do
+	convert "$FILE" -resize 25% "converted/$FILE"
+done
+

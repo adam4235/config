@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#Backs up my important files from my USB key to my hard drive
+
+disk_loc=`cat ${HOME}/bin/disk_loc.txt`
+
+while ! [ -e "${disk_loc}" ]
+do
+    echo "Waiting for disk..."
+    sleep 1
+done
+
+BACKUP=${disk_loc}/backup
+FILENAME=desktop_backup_gregs_tmp.tar
+FILENAME_FINAL=desktop_backup_gregs.tar
+
+rm "$BACKUP/$FILENAME"
+
+echo "Creating backup..."
+
+#tar cf ${DISC_ROOT}/backup/desktop_backup_virtual_machine.tar --same-owner --preserve-permissions ${HOME}/bin  ${HOME}/.thunderbird/Profiles/j798bueu.default/abook.mab ${HOME}/.local/share/wesnoth/ ${HOME}/Desktop
+tar cvf "$BACKUP/$FILENAME" --same-owner --preserve-permissions ${HOME}/myfiles ${HOME}/bin  ${HOME}/Desktop ${HOME}/.local/share/IntoTheBreach ${HOME}/.local/share/FasterThanLight > $BACKUP/backup.log
+cp "$BACKUP/$FILENAME" $BACKUP/${FILENAME_FINAL}  #make a backup of the backup so that the next time we can safely remove the current file.
+
+#Too big to backup:
+#${HOME}/.thunderbird/j798bueu.default/ 
+#${HOME}/.mozilla/firefox/
+

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Calling archive"
+archive
+
+echo "Calling rsync_backup"
+rsync_backup
+
+if [ `date +%d` == "01" ]
+then
+    echo "Calling backup"
+    backup
+
+    echo "Calling mkpast_backup"
+    mkpast_backup
+fi
+

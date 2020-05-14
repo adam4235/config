@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#Regenerates the recipe index for my website, to be run when a recipe is added or removed
+
+#Note: I should have 
+# <meta name="viewport" content="initial-scale=1">
+#at the top of the webpage, but it doesn't seem to cause too many problems to omit it.
+#If I include it, then the recipe names go off the edge of the screen on my phone.
+
+tree -H '.' -o index.html -T "Encyclopedia" .
+

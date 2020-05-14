@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#Wait for my USB key which contains my files.  Until that's plugged in,
+#the computer will just seem like a normal computer to others.
+
+disk_loc=`cat ${HOME}/bin/disk_loc.txt`
+
+while ! [ -e "${disk_loc}" ]
+do
+    echo "Waiting for disk..."
+    sleep 1
+done
+
+xfce4-terminal -x /home/adam/bin/onstartup_disk
+
+#Moved to the "Sessions / startup" part of the XFCE settings
+#internet
+

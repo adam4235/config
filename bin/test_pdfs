@@ -1,0 +1,9 @@
+#!/bin/bash
+
+checkfile () {
+    echo "Checking $1"
+    pdftotext "$1" - > /dev/null
+}
+
+find . -name '*.pdf' | while read file; do checkfile "$file"; done
+

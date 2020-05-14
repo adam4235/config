@@ -1,0 +1,11 @@
+#!/bin/bash
+disk_loc=`cat ${HOME}/bin/disk_loc.txt`
+
+while ! [ -e "${disk_loc}" ]
+do
+    echo "Waiting for disk..."
+    sleep 1
+done
+
+rsync -rt --modify-window=1 --progress ${HOME}/archive "${disk_loc}"
+

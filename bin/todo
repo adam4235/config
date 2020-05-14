@@ -1,0 +1,4 @@
+#!/bin/bash
+
+thunderbird -compose "to=adam.richard2020@outlook.com,from=adam.richard2020@outlook.com"
+

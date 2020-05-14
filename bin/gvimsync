@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#Workaround a display issue with a virtual machine by adding the --sync option
+gvim --sync $@
+

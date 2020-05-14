@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#while [ "`ps -A | grep backup`" != "" ] 
+#do echo "Waiting for backup to finish"
+#done
+
+echo "Creating monthly backup"
+
+disk_loc=`cat ${HOME}/bin/disk_loc.txt`
+BACKUP=${disk_loc}/backup
+FILENAME_FINAL=desktop_backup_gregs.tar
+
+while ! [ -e "${disk_loc}" ]
+do
+    echo "Waiting for disk..."
+    sleep 1
+done
+
+cd /home/adam/backup
+YEAR=`date +%Y`
+MON=`date +%m`
+filename=past_backups/backup-$YEAR-$MON.tar
+if ! [ -f $filename ]
+then
+	cp "${BACKUP}/${FILENAME_FINAL}" $filename
+fi
+

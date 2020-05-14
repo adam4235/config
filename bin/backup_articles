@@ -1,0 +1,15 @@
+#!/bin/bash
+
+backup_dir="${HOME}/backup"
+rm -r "${backup_dir}/articles_current"
+mkdir "${backup_dir}/articles_current"
+cd "${backup_dir}/articles_current"
+
+wget -p -k -i http://adam4235.github.io/articles.html -F
+
+diff . "${backup_dir}/articles" > "${HOME}/Desktop/articles_diff.txt" 2>&1
+if ! grep "Only in" "${HOME}/Desktop/articles_diff.txt" > /dev/null 2>&1
+then
+    rm "${HOME}/Desktop/articles_diff.txt" 
+fi
+
