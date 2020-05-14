@@ -164,6 +164,8 @@ bindsym $mod+F3 exec /home/adam/bin/todo
 bindsym $mod+n exec gvim
 bindsym $mod+f exec /home/adam/bin/pick_file
 bindsym Mod1+Tab focus down
+bindsym Print exec xfce4-screenshooter
+bindsym Ctrl+Mod1+Delete exec --no-startup-id xfce4-session-logout
 
 workspace_layout tabbed
 
