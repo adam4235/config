@@ -8,7 +8,7 @@ xfce4-session-settings:
 -disable locking the screen before sleep
 -disable the locker from starting at all
 
-Have to update /etc/samba/smb.conf to include ~/.smb.conf
+Restore files to /etc from ~/.etc-config-changes
 
 Re-install programs - the list should be backed up to my USB key, installed.txt.  Also need to install Discord and Steam separately.
 
