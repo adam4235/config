@@ -10,19 +10,30 @@ do
     sleep 1
 done
 
+LOCAL_BACKUP=${HOME}/backup
 BACKUP=${disk_loc}/backup
-FILENAME=desktop_backup_gregs_tmp.tar
-FILENAME_FINAL=desktop_backup_gregs.tar
-
-rm "$BACKUP/$FILENAME"
+FILENAME=desktop_backup_gregs.tar
+THUNDERBIRD=thunderbird.tar
+FIREFOX=firefox.tar
 
 echo "Creating backup..."
 
-#tar cf ${DISC_ROOT}/backup/desktop_backup_virtual_machine.tar --same-owner --preserve-permissions ${HOME}/bin  ${HOME}/.thunderbird/Profiles/j798bueu.default/abook.mab ${HOME}/.local/share/wesnoth/ ${HOME}/Desktop
-tar cvf "$BACKUP/$FILENAME" --same-owner --preserve-permissions ${HOME}/myfiles ${HOME}/bin  ${HOME}/Desktop ${HOME}/.local/share/IntoTheBreach ${HOME}/.local/share/FasterThanLight > $BACKUP/backup.log
-cp "$BACKUP/$FILENAME" $BACKUP/${FILENAME_FINAL}  #make a backup of the backup so that the next time we can safely remove the current file.
+rm "$LOCAL_BACKUP/$FILENAME"
+tar cvf "$LOCAL_BACKUP/$FILENAME" --same-owner --preserve-permissions ${HOME}/myfiles ${HOME}/bin  ${HOME}/Desktop ${HOME}/.local/share/IntoTheBreach ${HOME}/.local/share/FasterThanLight > $BACKUP/backup.log
+cp "$LOCAL_BACKUP/$FILENAME" "$BACKUP/$FILENAME"  #make a backup of the backup so that the next time we can safely remove the current file.
 
-#Too big to backup:
-#${HOME}/.thunderbird/j798bueu.default/ 
-#${HOME}/.mozilla/firefox/
+#Backup firefox and thunderbird files.
+#These files take up a lot of disk space, but it's kind of important to back them up:
+#thunderbird because it has my downloaded email (in case I accidentally delete it from the server),
+#and firefox because it has my cookies and site data for all the websites I visit.
+#These are the things that take up the most disk space anyway, so I might as well back up the
+#whole directories.
+
+rm "$LOCAL_BACKUP/$THUNDERBIRD"
+tar cvf "$LOCAL_BACKUP/$THUNDERBIRD" --same-owner --preserve-permissions "${HOME}/.thunderbird" >> $BACKUP/backup.log
+cp "$LOCAL_BACKUP/$THUNDERBIRD" "$BACKUP/$THUNDERBIRD" 
+
+rm "$LOCAL_BACKUP/$FIREFOX"
+tar cvf "$LOCAL_BACKUP/$FIREFOX" --same-owner --preserve-permissions "${HOME}/.mozilla" >> $BACKUP/backup.log
+cp "$LOCAL_BACKUP/$FIREFOX" "$BACKUP/$FIREFOX" 
 
