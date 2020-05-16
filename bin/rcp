@@ -1,25 +1,13 @@
 #!/bin/bash
 
 #Edit the grocery list
-vim ${HOME}/grocery_list.txt
+grocery_list="${HOME}/myfiles/iphone/grocery_list.txt"
+if [ -f "$grocery_list" ]
+then
+    gvim "$grocery_list"
+    echo Now sync via FE File Explorer
+else
+    echo Grocery list not found at "$grocery_list"
+fi
 
-echo >> ${HOME}/grocery_list.txt
-
-#Transfer it to my phone
-#target=${HOME}/phone/myfiles
-
-#mount_phone
-
-#while ! [ -e "$target" ]
-#do
-#    echo "Waiting for phone..."
-#    sleep 1
-#    mount_phone
-#done
-
-#cp ${HOME}/meal_schedule.txt ${HOME}/phone
-#cat ${HOME}/grocery_list.txt >> ${HOME}/phone/grocery_list.txt
-
-#Now that I know the phone is mounted, might as well back it up
-#phone_backup
 
