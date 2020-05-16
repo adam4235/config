@@ -1,0 +1,34 @@
+
+*hotkeys (but configure these through i3?)
+	Keyboard -> Application Shortcuts
+	Super+F2:
+	exo-open --launch WebBrowser
+	Super+F:
+	pick_file
+	Super+Enter:
+	launch terminal
+*disable other hotkeys
+*set onstartup and internet to run at startup
+*set disk to get mounted at startup, not just when plugged in
+    by adding this command to Startup applications:
+    udisksctl mount --block-device /dev/disk/by-label/DISK2S1
+    (From https://help.ubuntu.com/community/AutomaticallyMountPartitions)
+*restore cookies to firefox (cookies.sqlite) - for e.g. stock quotes and logins
+    in fact restore all firefox settings
+*Change keyboard repeat rate
+
+Workaround this bug in parole:
+https://bugs.launchpad.net/ubuntu/+source/gstreamer0.10/+bug/763894
+	-needed?
+
+*Run visudo and set it so I don't have to enter my password to sudo
+adam ALL=(ALL) NOPASSWD: ALL
+
+xfce4-session-settings:
+*disable gnome services from starting at startup
+*disable locking the screen before sleep
+*disable the locker from starting at all
+*under Application Autostart, make i3 start
+*under Session, set xfdesktop and xfwm4 to start "Never", then click "Save Session"
+
+https://askubuntu.com/questions/281074/can-i-set-my-user-account-to-have-no-password

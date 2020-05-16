@@ -1,0 +1,36 @@
+While the LiveCD is still going, you have to:
+-fix the grub installation by editing /boot/grub/menu.lst (on Artaxerxes, add noapic option, since the motherboard has a bug)
+-fix the /etc/fstab
+-restore /etc/groups and /etc/passwd, so my user (adam) has the correct userid and can view the files in my home directory
+
+-restore files in /etc that were backed up:
+/etc/udev/rules.d/10-local.rules so my devices work (also, I may need to change the rules sometimes, since they keep changing how they're written)
+
+-disable many services at startup (including the Volume Manager, so I can mount my usbkey)
+-Maybe disable automatic device management (to make my camera work):
+Open gnome registry: 
+gconf-editor
+Uncheck the key:
+/apps/nautilus/preferences/media_automount
+
+Make my startup script start at startup (if it doesn't already)
+
+Make my USB disk get added at log in (if it doesn't already) by adding this command to Startup applications:
+udisksctl mount --block-device /dev/disk/by-label/DISK2S1
+(From https://help.ubuntu.com/community/AutomaticallyMountPartitions)
+
+Run visudo and set it so all users of admin don't have to enter their password to sudo
+sudo ALL=(ALL) NOPASSWD: ALL
+
+-Make clock synced automatically (in Ubuntu, this is done under the Time and Date configuration in the GUI - you have to install NTP support)
+
+-Make Parole be the default for .mp3 files instead of gmusicbrowser (the latter seems pointless)
+
+sudo su
+
+sudo apt-get remove tracker
+
+sudo apt-get -y install vim-gtk
+sudo apt-get -y install gcc g++ rawdog dmenu
+sudo apt-get -y install chromium-browser
+

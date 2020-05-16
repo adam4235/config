@@ -1,0 +1,47 @@
+*hotkeys - if using i3, already configured in the config file
+	Keyboard -> Application Shortcuts
+	Super+F2:
+	exo-open --launch WebBrowser
+	Super+F:
+	pick_file
+	Super+Enter:
+	launch terminal
+*disable other hotkeys so they don't conflict with i3, but leave the Print Screen button, and make Ctrl+Alt+Del run xfce4-session-logout
+restore cookies to firefox (cookies.sqlite) - for e.g. stock quotes and logins
+    in fact restore all firefox settings
+*Change keyboard repeat rate
+    Restore ~/.xinitrc
+
+*Run visudo and set it so I don't have to enter my password to sudo
+adam ALL=(ALL) NOPASSWD: ALL
+
+xfce4-session-settings:
+*disable locking the screen before sleep
+*disable the locker from starting at all
+
+These can be restored by backing up / restoring $HOME/.config/autostart
+*set onstartup and internet to run at startup
+*set disk to get mounted at startup, not just when plugged in
+    by adding this command to Startup applications:
+    udisksctl mount --block-device /dev/disk/by-label/DISK2S1
+    (From https://help.ubuntu.com/community/AutomaticallyMountPartitions)
+
+For i3:
+*under Application Autostart, make i3 start
+*under Session, set xfdesktop and xfwm4 to start "Never", then click "Save Session"
+
+https://askubuntu.com/questions/281074/can-i-set-my-user-account-to-have-no-password
+
+To sync computer with iphone:
+I needed this definition in smb.conf:
+[iphone]
+path = /home/adam/myfiles/iphone
+writeable = yes
+browseable = yes
+public = yes
+create mask = 0644
+directory mask = 0755
+force user = adam
+
+Have to update /etc/samba/smb.conf to include ~/.smb.conf
+

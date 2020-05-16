@@ -1,0 +1,6 @@
+cd /media/adam/895ba0b9-9594-4520-b0de-ba5f075d5455/adam/
+cp Desktop/* ~/Desktop
+cp Downloads/* ~/Downloads
+mv .bash_history .bashrc ~/original_config_files_home_dir && 
+cp -a .mybashrc .bash_history .cpan .i3 .gitconfig .mozilla .pki .rawdog .recipes .ssh .thunderbird .vim .vimrc ~
+cp -a .adam archive backup bin github_pages large_videos movie myfiles Podcasts share tor ~

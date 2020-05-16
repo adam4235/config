@@ -1,0 +1,10 @@
+Hidden files:
+
+cp -a .thunderbird .rawdog .recipes .mozilla/firefox/ .vim .vimrc .bashrc .mybashrc .i3 .xinitrc
+cp -a .mozilla/firefox/ /media/adam/DISK2S1/adam/migrating_ubuntu/files/
+
+.mozilla/firefox/Profiles/uu5wq0tp.default/gm_scripts/Pinterest_without_registration
+
+.thunderbird/Profiles/j798bueu.default/Mail/Local Folders should point to /home/adam/archive/Local Folders/
+    -Thunderbird was already configured to store my mail directly at /home/adam/archive/Local Folders/, it seems
+

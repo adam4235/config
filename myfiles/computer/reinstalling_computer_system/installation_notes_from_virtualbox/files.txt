@@ -1,0 +1,18 @@
+Files to copy from hard drive when migrating ubuntu:
+regular files:
+audio
+backup
+bin
+
+Hidden files:
+
+cp -a .thunderbird .rawdog .recipes .mozilla/firefox/ .vim .vimrc
+cp -a .mozilla/firefox/ /media/adam/DISK2S1/adam/migrating_ubuntu/files/
+
+.mozilla/firefox/Profiles/uu5wq0tp.default/gm_scripts/Pinterest_without_registration
+
+.thunderbird/Profiles/j798bueu.default/Mail/Local Folders should point to /media/adam/DISK2S1/adam/archive/Local Folders/
+
+
+cp: cannot create symbolic link '/media/adam/DISK2S1/adam/migrating_ubuntu/files/.thunderbird/Profiles/j798bueu.default/Mail/Local Folders': Operation not permitted
+cp: cannot create directory '/media/adam/DISK2S1/adam/migrating_ubuntu/files/.thunderbird/Profiles/j798bueu.default/ImapMail/email.unb.ca/INBOX.sbd': File exists
