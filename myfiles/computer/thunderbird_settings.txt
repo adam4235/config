@@ -1,0 +1,9 @@
+Thunderbird settings I had to change from the defaults:
+What I had to change for new accounts:
+-Reply-to address for fastmail
+-Archive folder and Archive options to be a single folder
+-Don't compose messages in HTML format
+-Junk settings - don't mark mail as Junk
+
+-Change store location for Local Folders to the one in my archive folder
+
