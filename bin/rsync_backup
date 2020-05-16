@@ -10,3 +10,5 @@ done
 cd ${HOME}
 rsync -rt --modify-window=1 --progress "${HOME}/myfiles" "${HOME}/bin" "${HOME}/Desktop" "${HOME}/github_pages" "$disk_loc"
 
+/home/adam/bin/show_installed_apps.sh > "$disk_loc/installed.txt"
+

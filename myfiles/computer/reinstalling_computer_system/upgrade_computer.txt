@@ -1,4 +1,0 @@
--Move files on my home directory elsewhere
--Save this list, then compare it with the output after the install to know which extra packages to install:
-apt list --installed
-

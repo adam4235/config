@@ -10,3 +10,5 @@ xfce4-session-settings:
 
 Have to update /etc/samba/smb.conf to include ~/.smb.conf
 
+Re-install programs - the list should be backed up to my USB key, installed.txt.  Also need to install Discord and Steam separately.
+
