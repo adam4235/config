@@ -18,7 +18,7 @@ SCHEDULE=/home/adam/myfiles/iphone/meal_schedule.txt
 
 #An optional file of ingredients to add to the grocery list
 #every time (e.g. milk, bread)
-REG_INGREDIENTS=/home/adam/bin/reg_ingredients.txt
+REG_INGREDIENTS=/home/adam/myfiles/iphone/reg_ingredients.txt
 
 #Optional.  If present, an output file which will contain a list
 #of the recipes chosen by the program, in the form of a script.
@@ -36,5 +36,5 @@ REG_INGREDIENTS=/home/adam/bin/reg_ingredients.txt
 #ingredients for already.  Also, when generating the grocery list,
 #it will mark ingredients you already own so you can quickly delete 
 #them from the list.
-OWNED_INGREDIENTS=/home/adam/bin/owned_ingredients.txt
+OWNED_INGREDIENTS=/home/adam/myfiles/iphone/owned_ingredients.txt
 
