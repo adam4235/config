@@ -1,2 +1,0 @@
-sudo apt-get update
-sudo apt-get install vim-gtk default-jre eog filelight ffmpeg g++ gedit gnumeric suckless-tools rawdog trash-cli

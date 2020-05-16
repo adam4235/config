@@ -1,26 +1,3 @@
-
-hotkeys
-	Keyboard -> Application Shortcuts
-	Super+F2:
-	exo-open --launch WebBrowser
-	Super+F:
-	pick_file
-	Super+Enter:
-	launch terminal
-set onstartup to run at startup
-set disk to get mounted at startup, not just when plugged in
-    by adding this command to Startup applications:
-    udisksctl mount --block-device /dev/disk/by-label/DISK2S1
-    (From https://help.ubuntu.com/community/AutomaticallyMountPartitions)
-restore cookies to firefox (cookies.sqlite) - for e.g. stock quotes and logins
-Change keyboard repeat rate
-
-Workaround this bug in parole:
-https://bugs.launchpad.net/ubuntu/+source/gstreamer0.10/+bug/763894
-
-Run visudo and set it so all users of sudo don't have to enter their password to sudo
-sudo ALL=(ALL) NOPASSWD: ALL
-
 For virtualbox, to change the display resolution:
 sudo apt-get install virtualbox-guest-utils virtualbox-guest-dkms
 
