@@ -4,6 +4,7 @@ What I had to change for new accounts:
 -Archive folder and Archive options to be a single folder
 -Don't compose messages in HTML format
 -Junk settings - don't mark mail as Junk
+-For adam.richard@unb.ca and adam.richard2020@outlook.com, had to uncheck the box to save a copy in the Sent folder when sending messages - otherwise 2 copies get saved there.
 
 -Change store location for Local Folders to the one in my archive folder
 
