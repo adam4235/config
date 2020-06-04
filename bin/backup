@@ -16,10 +16,13 @@ FILENAME=desktop_backup_gregs.tar
 THUNDERBIRD=thunderbird.tar
 FIREFOX=firefox.tar
 
-echo "Creating backup..."
-
+echo "Removing old backup..."
 rm "$LOCAL_BACKUP/$FILENAME"
+
+echo "Creating backup..."
 tar cvf "$LOCAL_BACKUP/$FILENAME" --same-owner --preserve-permissions ${HOME}/myfiles ${HOME}/bin  ${HOME}/Desktop ${HOME}/.local/share/IntoTheBreach ${HOME}/.local/share/FasterThanLight > $BACKUP/backup.log
+
+echo "Copying backup to disk"
 cp "$LOCAL_BACKUP/$FILENAME" "$BACKUP/$FILENAME"  #make a backup of the backup so that the next time we can safely remove the current file.
 
 #Backup firefox and thunderbird files.
@@ -29,11 +32,21 @@ cp "$LOCAL_BACKUP/$FILENAME" "$BACKUP/$FILENAME"  #make a backup of the backup s
 #These are the things that take up the most disk space anyway, so I might as well back up the
 #whole directories.
 
+echo "Removing old Thunderbird backup..."
 rm "$LOCAL_BACKUP/$THUNDERBIRD"
+
+echo "Creating Thunderbird backup..."
 tar cvf "$LOCAL_BACKUP/$THUNDERBIRD" --same-owner --preserve-permissions "${HOME}/.thunderbird" >> $BACKUP/backup.log
+
+echo "Copying Thunderbird backup to disk"
 cp "$LOCAL_BACKUP/$THUNDERBIRD" "$BACKUP/$THUNDERBIRD" 
 
+echo "Removing old Firefox backup..."
 rm "$LOCAL_BACKUP/$FIREFOX"
+
+echo "Creating Firefox backup..."
 tar cvf "$LOCAL_BACKUP/$FIREFOX" --same-owner --preserve-permissions "${HOME}/.mozilla" >> $BACKUP/backup.log
+
+echo "Copying Firefox backup to disk"
 cp "$LOCAL_BACKUP/$FIREFOX" "$BACKUP/$FIREFOX" 
 
