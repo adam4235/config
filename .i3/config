@@ -180,6 +180,31 @@ exec --no-startup-id /home/adam/bin/start_desktop
 exec --no-startup-id /home/adam/bin/internet
 exec --no-startup-id /home/adam/bin/onstartup
 
+#Make window titles easier to see
+client.unfocused        #333333 #222222 #aaaaaa #292d2e   #222222
+
+
+#Icons in titlebars
+#From https://gist.github.com/dmelliot/437924ff581f3f1edd59f44833be6cc6
+#To set up:
+#
+#1. Download the "Free for Desktop" option from its website
+#2. Unzip the zip file
+#3. Find the .otf (font) files
+#4. Double click each one to open it and click Install in the top right
+#(from https://itsfoss.com/install-fonts-ubuntu/)
+#5. Add lines like the following to i3 config.
+
+font pango:Terminus, Awesome 14
+for_window [class="(?i)firefox"] title_format "<tt></tt><span foreground='#FF6611'>  </span><tt> </tt>%title"
+for_window [class="(.*)terminal(.*)"] title_format "<tt></tt><span foreground='#00FF00' background='#000000'>  </span><tt> </tt>%title"
+for_window [class="(?i)thunderbird"] title_format "<tt></tt><span foreground='#FFFFFF' >  </span><tt> </tt>%title"
+for_window [class="libreoffice-writer"] title_format "<tt></tt><span  background='#073642' foreground='#adc5e7' >  </span><tt> </tt>%title"
+for_window [class="libreoffice-calc"] title_format "<tt></tt><span  background='#073642' foreground='#add58a' >  </span><tt> </tt>%title"
+for_window [class="libreoffice-impress"] title_format "<tt></tt><span  background='#073642' foreground='#d07e7e' >  </span><tt> </tt>%title"
+for_window [class="(?i)gvim"] title_format "<tt></tt><span foreground='#FFFFFF' >  </span><tt> </tt>%title"
+for_window [class="(?i)thunar"] title_format "<tt></tt><span foreground='#FFFFFF' >  </span><tt> </tt>%title"
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
