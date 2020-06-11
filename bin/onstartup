@@ -3,6 +3,8 @@
 #Wait for my USB key which contains my files.  Until that's plugged in,
 #the computer will just seem like a normal computer to others.
 
+udisksctl mount --block-device /dev/disk/by-label/DISK2S1
+
 disk_loc=`cat ${HOME}/bin/disk_loc.txt`
 
 while ! [ -e "${disk_loc}" ]
