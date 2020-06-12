@@ -54,6 +54,7 @@ then
 fi
 
 if [ `date +%d` == "01" ]
+then
     "Backing up articles"
     backup_articles
 fi
