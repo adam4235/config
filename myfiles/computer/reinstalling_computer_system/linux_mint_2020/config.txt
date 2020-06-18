@@ -5,7 +5,8 @@ xfce4-session-settings:
 -disable locking the screen before sleep
 -disable the locker from starting at all
 -set up the panel
--to use i3 instead of the XFCE window manager, make sure i3 is started in Application Autostart, then under current session, change xfwm4 and xfdesktop to restart Never and save the session.
+-to use i3 instead of the XFCE window manager, make sure i3 is started in Application Autostart, then under current session, change xfwm4 and xfdesktop to restart Never and save the session.  See here for details:
+https://feeblenerd.blogspot.com/2015/11/pretty-i3-with-xfce.html
 -might be easiest to copy ~/.config/xfce4, but this didn't seem to work before.  Or maybe even .config.
 
 Restore files to /etc from ~/.etc-config-changes
