@@ -1,6 +1,35 @@
-For virtualbox, to change the display resolution:
+Config changes for using Linux as a guest in VirtualBox:
+
+To change the display resolution, I had to install the guest additions.  Originally I did this:
 sudo apt-get install virtualbox-guest-utils virtualbox-guest-dkms
 
-For virtualbox, had to install the extension pack to get USB 2.0 and 3.0.
+But on my Debian VirtualBox that didn't work.  The instructions to install it using VirtualBox worked.  Basically:
+
+1. With the Linux guest running, from the VirtualBox menu select Devices -> Insert Guest Additions CD Image.  This inserts a virtual CD (.iso) into the Linux guest containing some software to install.
+2. Mount the cd and install the guest additions:
+sudo mount /dev/cdrom /mnt
+cd /mnt
+sudo sh ./VBoxLinuxAdditions.run --nox11
+
+Details:
+
+https://linuxize.com/post/how-to-install-virtualbox-guest-additions-on-debian-10/
+
+----
+
+Had to install the extension pack to get USB 2.0 and 3.0.
+
+----
+
 Also had to disable Sleep Timers in Windows 10 to prevent Virtualbox from waking up the computer from sleep right after it went to sleep.
+(Power and Sleep settings -> Additional Power settings -> Change plan settings -> Change advanced power settings -> sleep -> Allow Wake Timers -> Disable)
+
+----
+
+I had the gvim --sync issue too, where gvim doesn't refresh properly unless run with the --sync option.  But on Debian adding --sync didn't solve it.
+https://superuser.com/questions/343599/gvim-redraw-failure
+
+----
+
+Also my USB key kept getting unmounted and getting issues (on Debian, at least).
 

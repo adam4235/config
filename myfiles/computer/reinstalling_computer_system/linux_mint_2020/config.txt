@@ -1,12 +1,12 @@
 restore cookies to firefox (cookies.sqlite) - for e.g. stock quotes and logins
     in fact restore all firefox settings
 
-Run visudo and set it so I don't have to enter my password to sudo
-adam ALL=(ALL) NOPASSWD: ALL
-
 xfce4-session-settings:
 -disable locking the screen before sleep
 -disable the locker from starting at all
+-set up the panel
+-to use i3 instead of the XFCE window manager, make sure i3 is started in Application Autostart, then under current session, change xfwm4 and xfdesktop to restart Never and save the session.
+-might be easiest to copy ~/.config/xfce4, but this didn't seem to work before.  Or maybe even .config.
 
 Restore files to /etc from ~/.etc-config-changes
 
