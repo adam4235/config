@@ -11,5 +11,7 @@ https://feeblenerd.blogspot.com/2015/11/pretty-i3-with-xfce.html
 
 Restore files to /etc from ~/.etc-config-changes
 
-Re-install programs - the list should be backed up to my USB key, installed.txt.  Also need to install Discord and Steam separately.
+Re-install programs.  My script show_installed_apps.sh can give an approximation of the packages I've installed manually.  Also need to install Discord and Steam separately.
+
+sudo apt install dos2unix dropbox exuberant-ctags ffmpeg g++ g++-8 gimp git gnumeric i3 imagemagick libimage-exiftool-perl libjpeg-progs libmysqlclient20 libsdl2-dev libsdl2-ttf-dev python3-pip python3-setuptools python-setuptools rawdog samba smartmontools suckless-tools teams thunar-dropbox-plugin trash-cli tree valgrind xfburn xterm
 
