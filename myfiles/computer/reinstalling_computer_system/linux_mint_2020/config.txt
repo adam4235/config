@@ -1,3 +1,5 @@
+Note: next time can try the tint2 panel if I don't want to use xfce.
+
 restore cookies to firefox (cookies.sqlite) - for e.g. stock quotes and logins
     in fact restore all firefox settings
 
@@ -13,5 +15,5 @@ Restore files to /etc from ~/.etc-config-changes
 
 Re-install programs.  My script show_installed_apps.sh can give an approximation of the packages I've installed manually.  Also need to install Discord and Steam separately.
 
-sudo apt install dos2unix dropbox exuberant-ctags ffmpeg g++ g++-8 gimp git gnumeric i3 imagemagick libimage-exiftool-perl libjpeg-progs libmysqlclient20 libsdl2-dev libsdl2-ttf-dev python3-pip python3-setuptools python-setuptools rawdog samba smartmontools suckless-tools teams thunar-dropbox-plugin trash-cli tree valgrind xfburn xterm
+sudo apt install dos2unix dropbox exuberant-ctags ffmpeg g++ g++-8 gimp git gnumeric i3 imagemagick libimage-exiftool-perl libjpeg-progs libmysqlclient20 libsdl2-dev libsdl2-ttf-dev python3-pip python3-setuptools python-setuptools rawdog samba smartmontools suckless-tools teams thunar-dropbox-plugin trash-cli tree valgrind xfburn vlc
 
