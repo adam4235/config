@@ -1,0 +1,12 @@
+#!/bin/bash
+
+backup_loc="/mnt/LinuxVMFolder"
+
+if ! [ -d "$backup_loc/myfiles" ]
+then
+    echo "Virtual Disk not mounted"
+    exit 1
+fi
+
+rsync -rt --modify-window=1 --progress ${HOME}/archive "${backup_loc}"
+

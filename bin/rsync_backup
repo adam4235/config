@@ -1,22 +1,22 @@
 #!/bin/bash
-disk_loc=`cat ${HOME}/bin/disk_loc.txt`
 
-while ! [ -e "${disk_loc}" ]
-do
-    echo "Waiting for disk..."
-    sleep 1
-done
+backup_loc="/mnt/LinuxVMFolder"
 
-cd ${HOME}
-rsync -rt --modify-window=1 --progress "${HOME}/myfiles" "${HOME}/bin" "${HOME}/Desktop" "${HOME}/github_pages" "$disk_loc"
+if ! [ -d "$backup_loc/myfiles" ]
+then
+    echo "Virtual Disk not mounted"
+    exit 1
+fi
+
+rsync -rt --modify-window=1 --progress "${HOME}/myfiles" "${HOME}/bin" "${HOME}/Desktop" "${HOME}/github_pages" "$backup_loc"
 
 #Backup thunderbird and firefox too.  They take up a lot of disk space, but their files can be important:
 #thunderbird because it has my downloaded email (in case I accidentally delete it from the server),
 #and firefox because it has my cookies and site data for all the websites I visit.
 
 echo "Backing up Thunderbird"
-rsync -rt --modify-window=1 "${HOME}/.thunderbird" ${HOME}/backup/thunderbird
+rsync -rt --modify-window=1 "${HOME}/.thunderbird" "${backup_loc}/thunderbird"
 
 echo "Backing up Firefox"
-rsync -rt --modify-window=1 "${HOME}/.mozilla" ${HOME}/backup/firefox
+rsync -rt --modify-window=1 "${HOME}/.mozilla" "${backup_loc}/firefox"
 
