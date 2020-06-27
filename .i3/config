@@ -203,6 +203,7 @@ for_window [class="libreoffice-writer"] title_format "<tt></tt><span  background
 for_window [class="libreoffice-calc"] title_format "<tt></tt><span  background='#073642' foreground='#add58a' >  </span><tt> </tt>%title"
 for_window [class="libreoffice-impress"] title_format "<tt></tt><span  background='#073642' foreground='#d07e7e' >  </span><tt> </tt>%title"
 for_window [class="(?i)gvim"] title_format "<tt></tt><span foreground='#FFFFFF' >  </span><tt> </tt>%title"
+for_window [class="(?i)xed"] title_format "<tt></tt><span foreground='#FFFFFF' >  </span><tt> </tt>%title"
 for_window [class="(?i)thunar"] title_format "<tt></tt><span foreground='#FFFFFF' >  </span><tt> </tt>%title"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
