@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "Calling rsync_archive"
+rsync_archive
+
+echo "Calling rsync_backup"
+rsync_backup
+
+echo "Finished rsync_backup"
+

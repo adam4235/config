@@ -7,5 +7,13 @@ do
     sleep 1
 done
 
-rsync -rt --modify-window=1 --progress ${HOME}/archive "${disk_loc}"
+LOCAL_BACKUP=${HOME}/backup
+BACKUP=${disk_loc}/backup
+FILENAME=archive.tar
+
+echo "Creating archive..."
+tar cvf "$LOCAL_BACKUP/$FILENAME" --same-owner --preserve-permissions ${HOME}/archive > $BACKUP/archive.log
+
+echo "Copying archive to disk"
+cp "$LOCAL_BACKUP/$FILENAME" "$BACKUP/$FILENAME"  #make a backup of the backup so that the next time we can safely remove the current file.
 
