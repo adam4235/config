@@ -2,6 +2,11 @@
 
 #Backs up my important files from my USB key to my hard drive
 
+if ! [ -d /media/adam/DISK2S1 ]
+then
+    udisksctl mount --block-device /dev/disk/by-label/DISK2S1
+fi
+
 disk_loc=`cat ${HOME}/bin/disk_loc.txt`
 
 while ! [ -e "${disk_loc}" ]
